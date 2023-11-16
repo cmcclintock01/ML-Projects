@@ -38,12 +38,15 @@ pt.head()
 
 #Here is the prediction part of the code
 test_movie = input('Enter movie name-->')
-
+#Select the movies vector of user ratings
+#Then create a correlation based on the ratings and put them all in similar_movies
 movie_vector = pt[test_movie].dropna()
 similar_movies = pt.corrwith(movie_vector)
-
+#Create a data frame that will hold all the movies and correlations
+#Merge it with no_of_ratings
 corr_df = pd.DataFrame(similar_movies, columns=['Correlation'])
 corr_df = corr_df.join(rating_and_no['no_of_ratings'])
-
+#Take at least 100 of the values and sort them from highest to lowest
 corr_df = corr_df[corr_df['no_of_ratings']>100].sort_values('Correlation', ascending=False).dropna()
-print(corr_df.head(10))
+#Give the results of the top 10
+corr_df.head(10)
