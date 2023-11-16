@@ -17,3 +17,9 @@ movie_titles.head()
 
 df = pd.merge(data, movie_titles, on='item_id')
 df.head()
+
+#Now we need to group the same movie entries
+#After we group by the title we are going to give them the average rating
+#Then we will put them in order from best to worst
+rating_and_no = pd.DataFrame(df.groupby('title')['rating'].mean().sort_values(ascending=False))
+rating_and_no
