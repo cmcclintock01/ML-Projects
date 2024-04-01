@@ -1,0 +1,2 @@
+# About My Data
+I was able to find a website, [rotowire](rotowire.com/baseball/stats.php), that allowed me to download a csv file of the 2022 MLB stats. The csv file I named ['2022stats.csv'](https://github.com/44-566-Machine-Learning-F23/ml-project-cmcclintock01/blob/master/2022stats.csv). There was no programs that I needed to use to pull the data because it was already given in csv format on the site.

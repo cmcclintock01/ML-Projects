@@ -1,0 +1,12 @@
+# My Analysis
+When I was looking at my data my goal was to find out which features in the data would be able to best correlate and guess how well a player is performing in the average feature. The first thing I did was look at the correlation between a few of the data features to find out if there was going to be any strong correlations. This was all done in [linear_regression](https://github.com/44-566-Machine-Learning-F23/ml-project-cmcclintock01/blob/master/linear_regression.ipynb). I found that H and SO did not have the strogest correlation with AVG and I was going to need to look at all of the features in my data when doing Decision Tree, SVC, and ensembles. In the file [classification](https://github.com/44-566-Machine-Learning-F23/ml-project-cmcclintock01/blob/master/classification.ipynb), I used the DecisionTreeClassifier and SVC to try to predict my AVG_group with the different data features. Comparing avg to the AVG_group was used as a control group to see how it would look if there was a perfect correlation in the data and there was still some missed with only 98% being correctly predicted. When you look at the decision trees, none of them are able to produce an accuracy score above 40%. The SVC does even worse.
+I wanted to look at how the models would do in an ensemble model. I used a polynomial kernel for the SVC because it gave the best scores out of any of the kernels. The accruacy scores were as followed: 
+Accuracy score for OPS is  0.25555555555555554
+Accuracy score for OBP is  0.2777777777777778
+Accuracy score for AVG is  0.9888888888888889
+Accuracy score for H is  0.4
+Accuracy score for SLG is 0.28888888888888886
+Accuracy score for SO is  0.3111111111111111
+Accuracy score for BB is  0.3111111111111111
+# What My Results Show
+When MLB teams are looking into players there are a few correlations they can make to see how well a player may do. Hits is going to give you the best accuracy aside from Average itself. MLB teams are going to want to combine different values that they find to get the best output. Instead of predicting the average_group I placed them in it could be used to just give a score on how well a player will perform in the next chunk of games depending on their past data. You would want to find data that correlates well with the AVG so Hits, Strike Outs, and Walks did the best out of the other features in the data.
